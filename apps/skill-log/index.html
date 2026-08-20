@@ -172,7 +172,7 @@
   <main class="container">
     <div style="margin-bottom: 24px;">
       <h2 style="font-size: 1.6rem; margin-bottom: 4px;">修得スキル ＆ 制作物・成長ログ一元管理アプリ</h2>
-      <p style="color: var(--text-sub); font-size: 0.92rem;">制作：高度専門士情報技術科 3年 伊澤 響 (Izawa Kyo)</p>
+      <p style="color: var(--text-sub); font-size: 0.92rem;">制作：さいたまIT・WEB専門学校 高度専門士情報技術科 3年 伊澤 響 (Izawa Kyo)</p>
     </div>
 
     <div class="grid-layout">
@@ -312,7 +312,7 @@
 
     window.generatePRText = function() {
       const topSkills = skills.filter(s => s.level >= 4).map(s => s.name).join('、');
-      const text = `【アピールスキル】\n高度専門士情報技術科にてWeb開発およびDB設計を専攻。特に ${topSkills} における実践的なアプリ開発に強みを持っています。\n\n【代表制作物】\n${userProjects.map(p => `・${p.title} (技術: ${p.tech})`).join('\n')}\n\n日々の学習ログと制作成果を管理し、継続的な技術力更新を行っています。`;
+      const text = `【アピールスキル】\nさいたまIT・WEB専門学校 高度専門士情報技術科にてWeb開発およびDB設計を専攻。特に ${topSkills} における実践的なアプリ開発に強みを持っています。\n\n【代表制作物】\n${userProjects.map(p => `・${p.title} (技術: ${p.tech})`).join('\n')}\n\n日々の学習ログと制作成果を管理し、継続的な技術力更新を行っています。`;
       document.getElementById('pr-output').textContent = text;
     };
 
