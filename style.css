@@ -1,5 +1,5 @@
 /* ==========================================================================
-   HIBIKI IZAWA PORTFOLIO - CLEAN LIGHT MODE DESIGN
+   IZAWA KYO PORTFOLIO - CLEAN LIGHT MODE DESIGN
    Theme: Bright, Modern, Minimal Studio (White / Slate / Indigo)
    ========================================================================== */
 
@@ -546,58 +546,6 @@ section {
   position: absolute;
   left: 0;
   color: var(--accent-primary);
-}
-
-/* Form */
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-label {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--text-muted);
-}
-
-.form-input, .form-textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-main);
-  font-family: inherit;
-  font-size: 0.92rem;
-}
-
-.form-input:focus, .form-textarea:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  background: #ffffff;
-}
-
-.form-textarea {
-  min-height: 110px;
-  resize: vertical;
-}
-
-.btn-submit {
-  width: 100%;
-  padding: 12px;
-  border-radius: var(--radius-sm);
-  background: var(--accent-primary);
-  color: #ffffff;
-  border: none;
-  font-weight: 700;
-  font-size: 0.92rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.btn-submit:hover {
-  opacity: 0.9;
 }
 
 /* Footer */

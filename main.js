@@ -1,5 +1,5 @@
 // ==========================================================================
-// HIBIKI IZAWA PORTFOLIO - MAIN LOGIC
+// IZAWA KYO PORTFOLIO - MAIN LOGIC
 // ==========================================================================
 import { projectsData, commonValues } from './projects.js';
 
@@ -92,7 +92,7 @@ function generateSkillLogAppUI() {
     <div class="real-ui-preview">
       <div class="ui-bar">
         <span>📊 SkillLog (スキル・制作物管理)</span>
-        <span>自己PR自動生成</span>
+        <span>伊澤 響 (Izawa Kyo)</span>
       </div>
       <div class="ui-row">
         <span>Python / Unity</span>

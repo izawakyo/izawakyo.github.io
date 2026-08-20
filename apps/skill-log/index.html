@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillLog | 学生向けポートフォリオ・スキル管理アプリ</title>
+  <title>SkillLog | 伊澤 響 (Izawa Kyo) 制作</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -172,20 +172,16 @@
   <main class="container">
     <div style="margin-bottom: 24px;">
       <h2 style="font-size: 1.6rem; margin-bottom: 4px;">修得スキル ＆ 制作物・成長ログ一元管理アプリ</h2>
-      <p style="color: var(--text-sub); font-size: 0.92rem;">制作：高度専門士情報技術科 3年 伊澤 響</p>
+      <p style="color: var(--text-sub); font-size: 0.92rem;">制作：高度専門士情報技術科 3年 伊澤 響 (Izawa Kyo)</p>
     </div>
 
     <div class="grid-layout">
-      <!-- Left Column: Skill Levels & Certifications -->
+      <!-- Left Column -->
       <div>
-        <!-- Skill Level List -->
         <div class="card">
           <div class="card-title">📊 習熟度別スキルレベル</div>
-          <div id="skill-list-container">
-            <!-- Rendered via JS -->
-          </div>
+          <div id="skill-list-container"></div>
 
-          <!-- Add Skill Form -->
           <form id="add-skill-form" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
             <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">＋ 新規スキル追加</div>
             <div style="display: flex; gap: 8px;">
@@ -202,7 +198,6 @@
           </form>
         </div>
 
-        <!-- Certifications -->
         <div class="card">
           <div class="card-title">📜 資格・実績・合格ログ</div>
           <ul style="list-style: none; font-size: 0.9rem;" id="cert-list">
@@ -213,14 +208,11 @@
         </div>
       </div>
 
-      <!-- Right Column: Projects Register & Auto PR Generator -->
+      <!-- Right Column -->
       <div>
-        <!-- Project Registration & GitHub URLs -->
         <div class="card">
           <div class="card-title">📦 制作物・GitHubリポジトリ管理</div>
-          <div id="project-list-container">
-            <!-- Rendered via JS -->
-          </div>
+          <div id="project-list-container"></div>
 
           <form id="add-project-form" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
             <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">＋ 新規制作物・GitHub URL追加</div>
@@ -237,7 +229,6 @@
           </form>
         </div>
 
-        <!-- Auto Self-PR Profile Generator -->
         <div class="card">
           <div class="card-title">✨ 就活用・自己PRプロフィール自動生成</div>
           <p style="font-size: 0.82rem; color: var(--text-sub); margin-bottom: 12px;">
@@ -253,7 +244,6 @@
   </main>
 
   <script>
-    // 初期サンプルスキルデータ
     let skills = [
       { name: "Python", level: 4 },
       { name: "FastAPI", level: 3 },
@@ -265,8 +255,8 @@
     ];
 
     let userProjects = [
-      { title: "課題・提出物管理アプリ (TaskFlow)", url: "https://github.com/hibiki-izawa/task-management-app", tech: "HTML/CSS, JS, Node.js, MySQL" },
-      { title: "スキル管理アプリ (SkillLog)", url: "https://github.com/hibiki-izawa/skill-log-app", tech: "JavaScript, HTML5, CSS3" }
+      { title: "課題・提出物管理アプリ (TaskFlow)", url: "https://github.com/izawakyo/task-management-app", tech: "HTML/CSS, JS, Node.js, MySQL" },
+      { title: "スキル管理アプリ (SkillLog)", url: "https://github.com/izawakyo/skill-log-app", tech: "JavaScript, HTML5, CSS3" }
     ];
 
     function renderSkills() {
