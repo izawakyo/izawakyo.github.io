@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillLog | 学生向けポートフォリオ・スキル管理アプリ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --accent: #4f46e5;
+      --accent-cyan: #0284c7;
+      --accent-green: #059669;
+      --accent-star: #f59e0b;
+      --text: #0f172a;
+      --text-sub: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      margin-bottom: 30px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .back-link {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #ffffff;
+    }
+    .back-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #f8fafc;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-name { font-weight: 700; font-size: 0.95rem; }
+    .skill-stars { color: var(--accent-star); letter-spacing: 2px; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-label { display: block; font-size: 0.82rem; color: var(--text-sub); margin-bottom: 4px; font-weight: 600; }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    .form-input:focus { outline: none; border-color: var(--accent); background: #ffffff; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .btn-submit:hover { opacity: 0.9; }
+
+    .pr-output-box {
+      background: #f1f5f9;
+      border: 1px dashed var(--accent);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .project-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .project-item-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 4px; }
+    .project-item-url { font-size: 0.8rem; color: var(--accent-cyan); word-break: break-all; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">SkillLog <span>(ポートフォリオ・スキル管理)</span></a>
+      <a href="../../index.html" class="back-link">← ポートフォリオに戻る</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-bottom: 24px;">
+      <h2 style="font-size: 1.6rem; margin-bottom: 4px;">修得スキル ＆ 制作物・成長ログ一元管理アプリ</h2>
+      <p style="color: var(--text-sub); font-size: 0.92rem;">制作：高度専門士情報技術科 3年 伊澤 響</p>
+    </div>
+
+    <div class="grid-layout">
+      <!-- Left Column: Skill Levels & Certifications -->
+      <div>
+        <!-- Skill Level List -->
+        <div class="card">
+          <div class="card-title">📊 習熟度別スキルレベル</div>
+          <div id="skill-list-container">
+            <!-- Rendered via JS -->
+          </div>
+
+          <!-- Add Skill Form -->
+          <form id="add-skill-form" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">＋ 新規スキル追加</div>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="new-skill-name" class="form-input" placeholder="言語・ツール名 (例: Unity)" required>
+              <select id="new-skill-level" class="form-select" style="width: 120px;">
+                <option value="5">★★★★★</option>
+                <option value="4" selected>★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+              </select>
+              <button type="submit" class="btn-submit" style="width: 80px;">追加</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Certifications -->
+        <div class="card">
+          <div class="card-title">📜 資格・実績・合格ログ</div>
+          <ul style="list-style: none; font-size: 0.9rem;" id="cert-list">
+            <li style="padding: 8px 0; border-bottom: 1px solid var(--border);">・基本情報技術者試験 (2024年 合格)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid var(--border);">・ITパスポート試験 (2023年 合格)</li>
+            <li style="padding: 8px 0;">・TOEIC Listening & Reading 720点 (2024年)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column: Projects Register & Auto PR Generator -->
+      <div>
+        <!-- Project Registration & GitHub URLs -->
+        <div class="card">
+          <div class="card-title">📦 制作物・GitHubリポジトリ管理</div>
+          <div id="project-list-container">
+            <!-- Rendered via JS -->
+          </div>
+
+          <form id="add-project-form" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">＋ 新規制作物・GitHub URL追加</div>
+            <div class="form-group">
+              <input type="text" id="p-title" class="form-input" placeholder="作品名 (例: 課題・提出物管理アプリ)" required>
+            </div>
+            <div class="form-group">
+              <input type="url" id="p-url" class="form-input" placeholder="GitHub URL (https://github.com/...)" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="p-tech" class="form-input" placeholder="使用技術 (例: HTML, CSS, JavaScript, Express)" required>
+            </div>
+            <button type="submit" class="btn-submit">制作物を登録する</button>
+          </form>
+        </div>
+
+        <!-- Auto Self-PR Profile Generator -->
+        <div class="card">
+          <div class="card-title">✨ 就活用・自己PRプロフィール自動生成</div>
+          <p style="font-size: 0.82rem; color: var(--text-sub); margin-bottom: 12px;">
+            登録されたスキルレベルと制作物から、面接やエントリーシートで使えるスキル要約文章をワンタップ生成します。
+          </p>
+          <button class="btn-submit" onclick="generatePRText()" style="background: var(--accent-cyan); margin-bottom: 14px;">
+            自己PR文を生成する
+          </button>
+          <div class="pr-output-box" id="pr-output">「自己PR文を生成する」ボタンを押すと、スキルサマリーが作成されます。</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // 初期サンプルスキルデータ
+    let skills = [
+      { name: "Python", level: 4 },
+      { name: "FastAPI", level: 3 },
+      { name: "MySQL", level: 3 },
+      { name: "JavaScript", level: 4 },
+      { name: "React", level: 4 },
+      { name: "TypeScript", level: 3 },
+      { name: "Unity", level: 4 }
+    ];
+
+    let userProjects = [
+      { title: "課題・提出物管理アプリ (TaskFlow)", url: "https://github.com/hibiki-izawa/task-management-app", tech: "HTML/CSS, JS, Node.js, MySQL" },
+      { title: "スキル管理アプリ (SkillLog)", url: "https://github.com/hibiki-izawa/skill-log-app", tech: "JavaScript, HTML5, CSS3" }
+    ];
+
+    function renderSkills() {
+      const container = document.getElementById('skill-list-container');
+      container.innerHTML = '';
+      skills.forEach(s => {
+        const stars = '★'.repeat(s.level) + '☆'.repeat(5 - s.level);
+        const row = document.createElement('div');
+        row.className = 'skill-row';
+        row.innerHTML = `
+          <span class="skill-name">${s.name}</span>
+          <span class="skill-stars">${stars}</span>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function renderProjects() {
+      const container = document.getElementById('project-list-container');
+      container.innerHTML = '';
+      userProjects.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'project-item';
+        item.innerHTML = `
+          <div class="project-item-title">${p.title}</div>
+          <div style="font-size: 0.8rem; color: var(--text-sub);">技術: ${p.tech}</div>
+          <a href="${p.url}" target="_blank" class="project-item-url">🔗 ${p.url}</a>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    document.getElementById('add-skill-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('new-skill-name').value;
+      const level = parseInt(document.getElementById('new-skill-level').value);
+      skills.push({ name, level });
+      document.getElementById('new-skill-name').value = '';
+      renderSkills();
+    });
+
+    document.getElementById('add-project-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('p-title').value;
+      const url = document.getElementById('p-url').value;
+      const tech = document.getElementById('p-tech').value;
+      userProjects.push({ title, url, tech });
+      document.getElementById('p-title').value = '';
+      document.getElementById('p-url').value = '';
+      document.getElementById('p-tech').value = '';
+      renderProjects();
+    });
+
+    window.generatePRText = function() {
+      const topSkills = skills.filter(s => s.level >= 4).map(s => s.name).join('、');
+      const text = `【アピールスキル】\n高度専門士情報技術科にてWeb開発およびDB設計を専攻。特に ${topSkills} における実践的なアプリ開発に強みを持っています。\n\n【代表制作物】\n${userProjects.map(p => `・${p.title} (技術: ${p.tech})`).join('\n')}\n\n日々の学習ログと制作成果を管理し、継続的な技術力更新を行っています。`;
+      document.getElementById('pr-output').textContent = text;
+    };
+
+    renderSkills();
+    renderProjects();
+  </script>
+</body>
+</html>

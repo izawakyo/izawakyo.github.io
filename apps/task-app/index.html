@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>課題・提出物管理アプリ | 伊澤 響 制作</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --card-hover: #f1f5f9;
+      --border: #e2e8f0;
+      --accent: #4f46e5;
+      --accent-green: #059669;
+      --accent-warn: #d97706;
+      --text: #0f172a;
+      --text-sub: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      margin-bottom: 30px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .back-link {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #ffffff;
+    }
+    .back-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .stat-card h4 { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 4px; }
+    .stat-card .num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .app-grid { grid-template-columns: 1fr; }
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .panel-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 0.85rem; color: var(--text-sub); margin-bottom: 6px; }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .form-input:focus, .form-select:focus { outline: none; border-color: var(--accent); background: #ffffff; }
+
+    .btn-add {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .btn-add:hover { opacity: 0.9; }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .filter-btn.active { background: var(--accent); color: #ffffff; border-color: var(--accent); font-weight: 700; }
+
+    .task-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .task-item.completed { opacity: 0.5; text-decoration: line-through; }
+
+    .task-info h5 { font-size: 0.98rem; font-weight: 700; margin-bottom: 2px; }
+    .task-meta { font-size: 0.8rem; color: var(--text-sub); display: flex; gap: 12px; }
+
+    .badge-sub {
+      background: rgba(79, 70, 229, 0.1);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .task-actions { display: flex; gap: 6px; }
+    .btn-status {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text);
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+    .btn-status:hover { border-color: var(--accent-green); color: var(--accent-green); }
+
+    .btn-del {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: #ef4444;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+    .btn-del:hover { border-color: #ef4444; background: rgba(239, 68, 68, 0.05); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">課題・提出物管理アプリ <span>(Task Manager)</span></a>
+      <a href="../../index.html" class="back-link">← ポートフォリオに戻る</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="margin-bottom: 24px;">
+      <h2 style="font-size: 1.6rem; margin-bottom: 4px;">課題・提出物の一元管理ダッシュボード</h2>
+      <p style="color: var(--text-sub); font-size: 0.92rem;">制作：高度専門士情報技術科 3年 伊澤 響</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h4>登録中の課題数</h4>
+        <div class="num" id="stat-total">0</div>
+      </div>
+      <div class="stat-card">
+        <h4>未提出・締切待ち</h4>
+        <div class="num" id="stat-pending" style="color: var(--accent-warn);">0</div>
+      </div>
+      <div class="stat-card">
+        <h4>提出完了</h4>
+        <div class="num" id="stat-done" style="color: var(--accent-green);">0</div>
+      </div>
+    </div>
+
+    <div class="app-grid">
+      <!-- Form Panel -->
+      <div class="panel">
+        <div class="panel-title">➕ 課題の新規登録</div>
+        <form id="task-form">
+          <div class="form-group">
+            <label class="form-label">課題名 *</label>
+            <input type="text" id="task-title" class="form-input" placeholder="例: アルゴリズム演習 レポート#3" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">科目名 *</label>
+            <input type="text" id="task-subject" class="form-input" placeholder="例: 情報技術論" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">締切日 *</label>
+            <input type="date" id="task-date" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">優先度</label>
+            <select id="task-priority" class="form-select">
+              <option value="高">高 (最優先)</option>
+              <option value="中" selected>中 (標準)</option>
+              <option value="低">低 (余裕あり)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-add">課題を追加する</button>
+        </form>
+      </div>
+
+      <!-- Task List Panel -->
+      <div class="panel">
+        <div class="panel-title">📌 課題一覧</div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="pending">未提出</button>
+          <button class="filter-btn" data-filter="completed">提出完了</button>
+        </div>
+
+        <div id="task-list-container">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const defaultTasks = [
+      { id: 1, title: "[アルゴリズム演習] 課題レポート #3", subject: "アルゴリズム論", date: "2026-08-25", priority: "高", completed: false },
+      { id: 2, title: "[データベース論] SQL正規化の課題提出", subject: "DB設計演習", date: "2026-08-22", priority: "中", completed: true },
+      { id: 3, title: "[Web制作実習] ポートフォリオ制作・提出", subject: "Webアプリケーション開発", date: "2026-08-30", priority: "高", completed: false }
+    ];
+
+    let tasks = JSON.parse(localStorage.getItem('izawa-tasks')) || defaultTasks;
+    let currentFilter = 'all';
+
+    const form = document.getElementById('task-form');
+    const container = document.getElementById('task-list-container');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function saveAndRender() {
+      localStorage.setItem('izawa-tasks', JSON.stringify(tasks));
+      renderTasks();
+      updateStats();
+    }
+
+    function updateStats() {
+      document.getElementById('stat-total').textContent = tasks.length;
+      document.getElementById('stat-pending').textContent = tasks.filter(t => !t.completed).length;
+      document.getElementById('stat-done').textContent = tasks.filter(t => t.completed).length;
+    }
+
+    function renderTasks() {
+      container.innerHTML = '';
+      let filtered = tasks;
+      if (currentFilter === 'pending') filtered = tasks.filter(t => !t.completed);
+      if (currentFilter === 'completed') filtered = tasks.filter(t => t.completed);
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div style="text-align:center; padding: 24px; color: var(--text-sub);">該当する課題はありません。</div>';
+        return;
+      }
+
+      filtered.forEach(task => {
+        const item = document.createElement('div');
+        item.className = `task-item ${task.completed ? 'completed' : ''}`;
+        item.innerHTML = `
+          <div class="task-info">
+            <h5>${task.title}</h5>
+            <div class="task-meta">
+              <span class="badge-sub">${task.subject}</span>
+              <span>📅 締切: ${task.date}</span>
+              <span>優先度: ${task.priority}</span>
+            </div>
+          </div>
+          <div class="task-actions">
+            <button class="btn-status" onclick="toggleTask(${task.id})">
+              ${task.completed ? '未完了に戻す' : '完了にする'}
+            </button>
+            <button class="btn-del" onclick="deleteTask(${task.id})">削除</button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newTask = {
+        id: Date.now(),
+        title: document.getElementById('task-title').value,
+        subject: document.getElementById('task-subject').value,
+        date: document.getElementById('task-date').value,
+        priority: document.getElementById('task-priority').value,
+        completed: false
+      };
+      tasks.unshift(newTask);
+      form.reset();
+      saveAndRender();
+    });
+
+    window.toggleTask = function(id) {
+      tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t);
+      saveAndRender();
+    };
+
+    window.deleteTask = function(id) {
+      if (confirm('この課題を削除しますか？')) {
+        tasks = tasks.filter(t => t.id !== id);
+        saveAndRender();
+      }
+    };
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        renderTasks();
+      });
+    });
+
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('task-date').value = today;
+    saveAndRender();
+  </script>
+</body>
+</html>

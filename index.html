@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="伊澤 響 (高度専門士情報技術科 3年) のWebアプリ開発ポートフォリオ。学校生活や学習課題の解決をテーマにした作品を掲載。">
+  <meta name="keywords" content="伊澤響, ポートフォリオ, Webエンジニア, 高度専門士情報技術科, React, TypeScript, Node.js, Express, MySQL">
+  <meta name="author" content="伊澤 響 (Hibiki Izawa)">
+  <title>伊澤 響 Portfolio | Web Developer</title>
+
+  <!-- Google Fonts & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        <span>伊澤 響 / Hibiki Izawa</span>
+        <span class="logo-badge">高度専門士情報技術科 3年</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">コンセプト</a></li>
+        <li><a href="#about" class="nav-link">自己紹介</a></li>
+        <li><a href="#tech" class="nav-link">技術スタック</a></li>
+        <li><a href="#projects" class="nav-link">作品一覧</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Top / Concept Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-meta-bar">
+          <span>高度専門士情報技術科 3年生</span>
+          <span>・</span>
+          <span>Webアプリケーション開発</span>
+        </div>
+
+        <h1 class="hero-title">
+          学生生活のリアルな課題を、<br>IT技術で解決する。
+        </h1>
+
+        <div class="concept-card">
+          <h3>■ コンセプト</h3>
+          <p style="margin-bottom: 12px;">
+            自分自身が感じてきた不便や悩みを出発点に、<strong>“実際に役立つアプリケーションを作る”</strong>ことをテーマに制作しています。
+          </p>
+          <p>
+            高度専門士情報技術科で学んだ技術を活かし、Webアプリ開発・データベース設計・UI/UX改善など、実務に近い形での制作を行っています。
+            本ポートフォリオでは、<strong>「課題管理の悩み」</strong>と<strong>「学んだ技術や作品を管理・就活に活かしたいという想い」</strong>から生まれた関連性の強い2つの作品を掲載しています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section / 自己紹介ページ -->
+    <section id="about">
+      <div class="container">
+        <div class="section-label">Profile</div>
+        <h2 class="section-title">自己紹介</h2>
+        <p class="section-desc">課題を構造的に捉え、改善につなげる力</p>
+
+        <div class="card profile-card">
+          <div class="profile-header">
+            <div>
+              <h3 class="profile-name">伊澤 響</h3>
+              <span class="profile-dept">高度専門士情報技術科 在籍（現在3年生）</span>
+            </div>
+          </div>
+
+          <p class="bio-p">
+            私は <strong>「課題を構造的に捉え、改善につなげる力」</strong> を強みとしています。
+            学校生活や学習の中で感じた不便をそのままにせず、「どうすればもっと良くできるか」を考え、実際に形にすることを大切にしています。
+          </p>
+
+          <p class="bio-p">
+            学科ではWebアプリ開発やDB設計を学び、課題管理アプリ（TaskFlow）やポートフォリオ・スキル管理アプリ（SkillLog）など、実際のニーズに基づいた制作を行ってきました。
+          </p>
+
+          <p class="bio-p">
+            また、コンビニでの接客アルバイトでは、混雑時の作業を優先度ごとに整理し、効率的に動く習慣が身につきました。技術と現場経験の両方から、「状況を分析し、最適な行動を選ぶ力」を伸ばしています。
+          </p>
+
+          <div class="details-row">
+            <div class="details-box">
+              <h5>■ 得意分野</h5>
+              <p>・Webアプリ開発 (React / Node.js)</p>
+              <p>・データベース設計 (MySQL)</p>
+              <p>・UI/UX改善</p>
+              <p>・Windows環境の最適化・効率化</p>
+            </div>
+            <div class="details-box">
+              <h5>■ 目指す姿</h5>
+              <p>学んだ技術を実務に活かし、ユーザーの課題を解決できるサービスを作れるエンジニアを目指しています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack & Policy Section -->
+    <section id="tech">
+      <div class="container">
+        <div class="section-label">Tech Stack & Policy</div>
+        <h2 class="section-title">技術スタック ＆ 制作姿勢</h2>
+        <p class="section-desc">Webアプリケーション開発の一連の流れを習得しています。</p>
+
+        <div class="tech-grid">
+          <div class="card tech-box">
+            <h4>フロントエンド</h4>
+            <div class="tag-cloud">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="card tech-box">
+            <h4>バックエンド</h4>
+            <div class="tag-cloud">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+            </div>
+          </div>
+
+          <div class="card tech-box">
+            <h4>データベース</h4>
+            <div class="tag-cloud">
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="card tech-box">
+            <h4>開発環境・ツール</h4>
+            <div class="tag-cloud">
+              <span class="tag">GitHub</span>
+              <span class="tag">Vercel</span>
+              <span class="tag">VSCode</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card policy-card">
+          <h4 style="margin-bottom: 12px; font-size: 0.95rem; color: var(--accent-primary);">■ 制作姿勢</h4>
+          <ul class="policy-list">
+            <li>実際の課題から発想する「問題解決型」の制作</li>
+            <li>技術の理解だけでなく、使いやすさを重視したUI設計</li>
+            <li>改善を続けるための学習ログや振り返りを実施</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section (2作品) -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">Selected Works</div>
+        <h2 class="section-title">掲載作品一覧（2本）</h2>
+        <p class="section-desc">学校生活の課題解決と、就活・成長管理をテーマにした関連性の高い制作物です。</p>
+
+        <div class="projects-grid" id="projects-container">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- 2作品に共通する価値 -->
+        <div style="margin-top: 56px;">
+          <h3 style="font-size: 1.3rem; margin-bottom: 16px;">2作品に共通する価値 ＆ 強いストーリー</h3>
+          <div class="values-grid" id="common-values-container">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-content">
+      <!-- Rendered via JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 伊澤 響 (Hibiki Izawa) All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
