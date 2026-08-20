@@ -55,7 +55,7 @@ export const projectsData = [
       "科目ごとの進捗率や学習傾向をグラフ化する分析機能の追加予定"
     ],
 
-    githubUrl: "https://github.com/izawakyo/izawakyo.github.io/tree/main/apps/task-app",
+    githubUrl: "https://github.com/izawakyo/izawakyo.github.io",
     liveUrl: "./apps/task-app/index.html"
   },
   {
@@ -112,7 +112,7 @@ export const projectsData = [
       "GitHub API連携による自動コミット数取得・スキル更新機能の追加予定"
     ],
 
-    githubUrl: "https://github.com/izawakyo/izawakyo.github.io/tree/main/apps/skill-log",
+    githubUrl: "https://github.com/izawakyo/izawakyo.github.io",
     liveUrl: "./apps/skill-log/index.html"
   }
 ];
