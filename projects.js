@@ -57,11 +57,13 @@ export const projectsData = [
       "科目ごとの進捗率や学習傾向をグラフ化する分析機能の追加予定"
     ],
 
-    // GitHub / デモ
+    // GitHub
     githubUrl:
-      "https://github.com/izawakyo/izawakyo.github.io/tree/main/apps/task-app",
+      "https://github.com/izawakyo/TaskFlow",
+
+    // GitHub Pages デモ
     liveUrl:
-      "./apps/task-app/index.html"
+      "https://izawakyo.github.io/TaskFlow/"
   },
 
   {
@@ -120,33 +122,40 @@ export const projectsData = [
       "GitHub API連携による自動コミット数取得・スキル更新機能の追加予定"
     ],
 
-    // ★ここを変更
+    // GitHub
     githubUrl:
       "https://github.com/izawakyo/SkillLog",
 
-    // ★ここを変更
+    // GitHub Pages デモ
     liveUrl:
       "https://izawakyo.github.io/SkillLog/"
   }
 ];
 
+
+// ==========================================================================
 // 2作品に共通する価値
+// ==========================================================================
+
 export const commonValues = [
   {
     title: "① 自分の生活・就活課題から発想している",
     desc:
       "TaskFlow（学校の課題を管理）× SkillLog（学んだ技術・作品を管理）という、自身の学校生活と就活動線に直結した2つの作品で構成されています。"
   },
+
   {
     title: "② 2つの作品に強い関連性がある",
     desc:
       "日々の講義・課題消化から、身についたスキルの記録・作品整理まで、学生生活のサイクルをトータルで支える相互補完的なシステム構成です。"
   },
+
   {
     title: "③ 技術の幅と実務的な設計",
     desc:
       "フロント（HTML/CSS/JS）、バックエンド（Node.js/Express）、DB（MySQL）まで、Webアプリ開発の一連の流れを確実に押さえています。"
   },
+
   {
     title: "④ 明確な問題解決ストーリー",
     desc:
