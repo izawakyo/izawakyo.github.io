@@ -11,7 +11,8 @@ export const projectsData = [
     accentColor: "#38bdf8",
 
     // 作品概要
-    overview: "さいたまIT・WEB専門学校における課題や提出物の数が多く、管理の煩雑さや締切の抜け漏れを防ぐために開発した一元管理アプリケーション。",
+    overview:
+      "さいたまIT・WEB専門学校における課題や提出物の数が多く、管理の煩雑さや締切の抜け漏れを防ぐために開発した一元管理アプリケーション。",
 
     // 課題背景
     problems: [
@@ -21,7 +22,8 @@ export const projectsData = [
     ],
 
     // 解決策
-    solution: "「課題・提出物を直感的に一元管理できるWebアプリ」を開発。締切までの視認性を高め、計画的な課題消化をサポート。",
+    solution:
+      "「課題・提出物を直感的に一元管理できるWebアプリ」を開発。締切までの視認性を高め、計画的な課題消化をサポート。",
 
     // 主な機能
     features: [
@@ -55,9 +57,11 @@ export const projectsData = [
       "科目ごとの進捗率や学習傾向をグラフ化する分析機能の追加予定"
     ],
 
-    githubUrl: "https://github.com/izawakyo/izawakyo.github.io/tree/main/apps/task-app",
-    liveUrl: "./apps/task-app/index.html"
+    // GitHub / デモ
+    githubUrl: "https://github.com/izawakyo/TaskFlow",
+    liveUrl: "https://izawakyo.github.io/TaskFlow/"
   },
+
   {
     id: "project-2",
     title: "ポートフォリオ・スキル管理アプリ (SkillLog)",
@@ -68,7 +72,8 @@ export const projectsData = [
     accentColor: "#818cf8",
 
     // 作品概要
-    overview: "さいたまIT・WEB専門学校での日々の学習成果、習熟度スキルレベル、制作物、資格を一元管理し、就職活動時の自己PRや成長分析に役立てるアプリケーション。",
+    overview:
+      "さいたまIT・WEB専門学校での日々の学習成果、習熟度スキルレベル、制作物、資格を一元管理し、就職活動時の自己PRや成長分析に役立てるアプリケーション。",
 
     // 課題背景
     problems: [
@@ -78,7 +83,8 @@ export const projectsData = [
     ],
 
     // 解決策
-    solution: "「自分が学んだ技術・スキルレベル・制作物・資格・GitHub URLを一元管理し、自己PR文を自動生成するアプリ」を開発。",
+    solution:
+      "「自分が学んだ技術・スキルレベル・制作物・資格・GitHub URLを一元管理し、自己PR文を自動生成するアプリ」を開発。",
 
     // 主な機能
     features: [
@@ -112,8 +118,9 @@ export const projectsData = [
       "GitHub API連携による自動コミット数取得・スキル更新機能の追加予定"
     ],
 
-    githubUrl: "https://github.com/izawakyo/izawakyo.github.io/tree/main/apps/skill-log",
-    liveUrl: "./apps/skill-log/index.html"
+    // GitHub / デモ
+    githubUrl: "https://github.com/izawakyo/SkillLog",
+    liveUrl: "https://izawakyo.github.io/SkillLog/"
   }
 ];
 
@@ -121,18 +128,25 @@ export const projectsData = [
 export const commonValues = [
   {
     title: "① 自分の生活・就活課題から発想している",
-    desc: "TaskFlow（学校の課題を管理）× SkillLog（学んだ技術・作品を管理）という、自身の学校生活と就活動線に直結した2つの作品で構成されています。"
+    desc:
+      "TaskFlow（学校の課題を管理）× SkillLog（学んだ技術・作品を管理）という、自身の学校生活と就活動線に直結した2つの作品で構成されています。"
   },
+
   {
     title: "② 2つの作品に強い関連性がある",
-    desc: "日々の講義・課題消化から、身についたスキルの記録・作品整理まで、学生生活のサイクルをトータルで支える相互補完的なシステム構成です。"
+    desc:
+      "日々の講義・課題消化から、身についたスキルの記録・作品整理まで、学生生活のサイクルをトータルで支える相互補完的なシステム構成です。"
   },
+
   {
     title: "③ 技術の幅と実務的な設計",
-    desc: "フロント（HTML/CSS/JS）、バックエンド（Node.js/Express）、DB（MySQL）まで、Webアプリ開発の一連の流れを確実に押さえています。"
+    desc:
+      "フロント（HTML/CSS/JS）、バックエンド（Node.js/Express）、DB（MySQL）まで、Webアプリ開発の一連の流れを確実に押さえています。"
   },
+
   {
     title: "④ 明確な問題解決ストーリー",
-    desc: "「当事者としての悩み → IT技術で構造的に解決 → 就活や学習での実践的活用」という説得力の高いストーリーを提示しています。"
+    desc:
+      "「当事者としての悩み → IT技術で構造的に解決 → 就活や学習での実践的活用」という説得力の高いストーリーを提示しています。"
   }
 ];
